@@ -23,4 +23,16 @@ const data = {
     }
   };
 
-  console.log(data)
+
+const customerArray = Object.keys(data.customers).map(function (key){
+  return [key , data.customers[key]];
+})
+const prizeArray = Object.keys(data.prizes).map(function (key){
+  return [key, data.prizes[key]];
+})
+
+
+
+console.log(customerArray)
+console.log(prizeArray)
+
