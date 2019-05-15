@@ -1,8 +1,12 @@
 #sec1 {
     display: flex;
-}
+    border: solid 1px black;
+    background-color: lightcoral;
+
+  }
 #sec2 {
     display: flex;
     flex-direction: row;
+    border: solid 1px black;
     background-color: lightblue;
   }

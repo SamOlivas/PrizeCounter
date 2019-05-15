@@ -13,7 +13,7 @@ const data = {
       Curly: {
         Foo: 0,
         Bar: 0,
-        Bazz: 0
+        Bazz: 1
       }
     },
     prizes: {
@@ -31,6 +31,15 @@ const prizeArray = Object.keys(data.prizes).map(function (key){
   return [key, data.prizes[key]];
 })
 
+const sec1 = document.querySelector('#sec1')
+sec1.addEventListener('click', () => {
+  console.log('click')
+});
+
+const sec2 = document.querySelector('#sec2')
+sec2.addEventListener('click', () => {
+  console.log('click')
+});
 
 
 console.log(customerArray)
