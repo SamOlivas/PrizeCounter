@@ -38,35 +38,38 @@ const customerState = Object.keys(data.customers).map(function (key){
 const prizeState = Object.keys(data.prizes).map(function (key){
   return [key, data.prizes[key]];
 })
-
+console.log(data.customers.Moe)
 console.log(prizeState)
-
+console.log(prizeState[0])
+let prize1 = prizeState[0]
+console.log(prize1)
 // Turn data into HTML elements to e displayed
 const counterTemplate = (data) => {
-  `
-  <div>
-  <h3> Prize Counter </h3>
-    <ul>
-      ${ }
-    </ul>
-  </div>
-  `
+  Object.keys(data.prizes).map( function (key) {
+    `
+    <div>
+    <h3> Prize Counter </h3>
+      <ul>
+        <li> ${ key } </li>
+      </ul>
+    </div>
+    `
+  })
 }
 
-const customerTemplate = (prizeState) => `
-  <div>
-    ${ }
-    <br />
-    <button> - </button>
-    <button> + </button>
-
-  </div>
-`;
+// const customerTemplate = (prizeState) => `
+//   <div>
+//     ${ datat [1] }
+//     <br />
+//     <button> - </button>
+//     <button> + </button>
+//   </div>
+// `;
 
 // Change inner html
 const render = () =>  {
-  prizeSec.innerHTML = counterTemplate()
-  customerSec.innerHTML = customerTemplate()
+  prizeSec.innerHTML = counterTemplate(data)
+//  customerSec.innerHTML = customerTemplate()
 }
 render()
 
