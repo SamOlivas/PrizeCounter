@@ -23,25 +23,60 @@ const data = {
     }
   };
 
+// HTML section object
+const prizeSec = document.querySelector('#sec1')
+const customerSec = document.querySelector('#sec2')
 
-const customerArray = Object.keys(data.customers).map(function (key){
+const state = {
+  counter: 0,
+}
+
+// Maps global data object to separate cus & prize arrays
+const customerState = Object.keys(data.customers).map(function (key){
   return [key , data.customers[key]];
 })
-const prizeArray = Object.keys(data.prizes).map(function (key){
+const prizeState = Object.keys(data.prizes).map(function (key){
   return [key, data.prizes[key]];
 })
 
-const sec1 = document.querySelector('#sec1')
-sec1.addEventListener('click', () => {
+console.log(prizeState)
+
+// Turn data into HTML elements to e displayed
+const counterTemplate = (data) => {
+  `
+  <div>
+  <h3> Prize Counter </h3>
+    <ul>
+      ${ }
+    </ul>
+  </div>
+  `
+}
+
+const customerTemplate = (prizeState) => `
+  <div>
+    ${ }
+    <br />
+    <button> - </button>
+    <button> + </button>
+
+  </div>
+`;
+
+// Change inner html
+const render = () =>  {
+  prizeSec.innerHTML = counterTemplate()
+  customerSec.innerHTML = customerTemplate()
+}
+render()
+
+//Event listeners
+sec1.addEventListener('click', (ev) => {
   console.log('click')
+  console.log(ev.target)
 });
-
-const sec2 = document.querySelector('#sec2')
-sec2.addEventListener('click', () => {
+sec2.addEventListener('click', (ev) => {
   console.log('click')
+  console.log(ev.target)
 });
-
-
-console.log(customerArray)
-console.log(prizeArray)
 
