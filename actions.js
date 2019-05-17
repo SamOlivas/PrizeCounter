@@ -23,6 +23,9 @@ const data = {
     }
   };
 
+/* 
+Good use of comments!
+ */  
 // HTML section object
 const prizeSec = document.querySelector('#sec1')
 const customerSec = document.querySelector('#sec2')
@@ -46,6 +49,9 @@ console.log(prize1)
 // Turn data into HTML elements to e displayed
 const counterTemplate = (data) => {
   Object.keys(data.prizes).map( function (key) {
+    /* 
+    Just need to return to get rid of this error!
+     */
     `
     <div>
     <h3> Prize Counter </h3>
@@ -57,6 +63,9 @@ const counterTemplate = (data) => {
   })
 }
 
+/* 
+Avoid leaving unused commented-out code.  But I see where you were going with this.  That's a good idea, passing in (or just using) prize state inside a render function/template.  That would be a good approach.
+ */
 // const customerTemplate = (prizeState) => `
 //   <div>
 //     ${ datat [1] }
@@ -66,6 +75,9 @@ const counterTemplate = (data) => {
 //   </div>
 // `;
 
+/* 
+Good use of innerHTML
+ */
 // Change inner html
 const render = () =>  {
   prizeSec.innerHTML = counterTemplate(data)
@@ -73,7 +85,13 @@ const render = () =>  {
 }
 render()
 
+/* 
+Good logging out the event.  That's a great first step.
+ */
 //Event listeners
+/* 
+I see how you're trying to use the IDs to add event listeners.  First, we need to set the div itself equal to a variable, then we can add event listeners.
+ */
 sec1.addEventListener('click', (ev) => {
   console.log('click')
   console.log(ev.target)
